@@ -1,0 +1,9 @@
+applications:
+- name: celerytest
+  instances: 1
+  memory: 512M
+  command: null
+  services:
+  - celerymysql
+  - celeryrabbit
+  buildpack: https://github.com/ephoning/heroku-buildpack-python.git
