@@ -1,9 +1,7 @@
-from celery import Celery
+from celery import shared_task
 from models import Test
 
-app = Celery('tasks', broker='amqp://guest@localhost')
-
-@app.task
+@shared_task
 def add_one():
 	t = Test.objects.get(text="Count")
 	t.number += 1
